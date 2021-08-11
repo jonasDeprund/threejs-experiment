@@ -41,6 +41,16 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+// Listen double click
+window.addEventListener('dblclick', () => {
+  if (!document.fullscreenElement) {
+    canvas.requestFullscreen();
+    console.log('go fullscreen');
+  } else {
+    document.exitFullscreen();
+  }
+});
+
 // Scene
 const scene = new THREE.Scene();
 
